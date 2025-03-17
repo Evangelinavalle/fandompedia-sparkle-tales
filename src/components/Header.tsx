@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Book, MessageCircle, Home, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AuthModal } from '@/components/AuthModal';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,6 +62,7 @@ export function Header() {
             <button className="p-2 rounded-full hover:bg-secondary transition-colors">
               <Search className="h-5 w-5" />
             </button>
+            <AuthModal />
           </div>
         </div>
       </div>

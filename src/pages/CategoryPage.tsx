@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -156,6 +157,28 @@ const categoryData = {
           traits: ['Determined', 'Powerful', 'Reserved', 'Strategic']
         },
         description: 'Sung Jin-Woo is the main protagonist of Solo Leveling. He started out as the weakest rank of hunter known as the "World\'s Weakest Hunter". After a near-death experience in a double dungeon, he gained the System\'s power.',
+        category: 'manhwa' as const
+      },
+      {
+        id: 'tower-of-god',
+        image: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd',
+        stats: {
+          name: 'Twenty-Fifth Bam',
+          age: 20,
+          height: '178 cm',
+          traits: ['Compassionate', 'Resilient', 'Loyal', 'Exceptional Growth']
+        },
+        description: 'Bam is the main protagonist of Tower of God. He entered the Tower in pursuit of his friend Rachel who disappeared while attempting to climb the Tower. Initially appearing innocent and naive, Bam grows significantly throughout the series as he faces numerous challenges and betrayals.',
+        additionalImages: [
+          { 
+            url: 'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9', 
+            caption: 'Bam using Shinsu abilities'
+          },
+          { 
+            url: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead', 
+            caption: 'Bam with his friends in the Tower'
+          }
+        ],
         category: 'manhwa' as const
       }
     ]

@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -17,6 +16,16 @@ const featuredAnime = [
       traits: ['Determined', 'Friendly', 'Reckless', 'Optimistic']
     },
     description: 'Naruto Uzumaki is the titular protagonist of the manga Naruto, created by Masashi Kishimoto. As the series progresses, he is a young ninja from the fictional village of Konohagakure. The villagers ridicule and ostracize Naruto on account of the Nine-Tailed Demon Fox—a malevolent creature that attacked Konohagakure—that was sealed away in his body. Despite this, he aspires to become his village\'s leader, the Hokage, in order to receive their approval.',
+    additionalImages: [
+      { 
+        url: 'https://source.unsplash.com/random/800x450/?ninja', 
+        caption: 'Naruto using his signature jutsu'
+      },
+      { 
+        url: 'https://source.unsplash.com/random/800x450/?forest', 
+        caption: 'Training in the Hidden Leaf Village'
+      }
+    ],
     category: 'anime' as const
   },
   {
@@ -67,6 +76,16 @@ const featuredDisney = [
       traits: ['Courageous', 'Conflicted', 'Loyal', 'Compassionate']
     },
     description: 'Simba is the protagonist of Disney\'s 1994 animated feature film, The Lion King. He is the son of Mufasa and Sarabi, who was destined to rule the Pride Lands, as king. When Mufasa was murdered by his treacherous brother, Scar, Simba was exiled from the Pride Lands after his uncle tricked him into taking the blame for his father\'s death.',
+    additionalImages: [
+      { 
+        url: 'https://source.unsplash.com/random/800x450/?savanna', 
+        caption: 'The Pride Lands'
+      },
+      { 
+        url: 'https://source.unsplash.com/random/800x450/?lion-cub', 
+        caption: 'Young Simba'
+      }
+    ],
     category: 'disney' as const
   },
   {

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface CharacterStats {
   name: string;
@@ -10,10 +11,16 @@ interface CharacterStats {
   traits: string[];
 }
 
+interface CharacterImage {
+  url: string;
+  caption?: string;
+}
+
 interface CharacterTabletProps {
   image: string;
   stats: CharacterStats;
   description: string;
+  additionalImages?: CharacterImage[];
   category: 'anime' | 'disney' | 'ghibli' | 'manhwa' | 'asian';
 }
 
@@ -21,6 +28,7 @@ export function CharacterTablet({
   image, 
   stats, 
   description,
+  additionalImages = [],
   category 
 }: CharacterTabletProps) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -113,7 +121,7 @@ export function CharacterTablet({
           </div>
         </div>
         
-        {/* Back side - Full character description */}
+        {/* Back side - Full character description with images */}
         <div 
           className="absolute inset-0 backface-hidden rotate-y-180"
           style={{ 
@@ -125,10 +133,33 @@ export function CharacterTablet({
             <h3 className="text-xl font-bold mb-1">{stats.name}</h3>
             <div 
               ref={contentRef}
-              className="overflow-y-auto flex-1 text-sm text-muted-foreground space-y-2 pr-1"
+              className="overflow-y-auto flex-1 text-sm text-muted-foreground space-y-4 pr-1"
               onScroll={handleScroll}
             >
               <p>{description}</p>
+              
+              {/* Additional character images */}
+              {additionalImages.length > 0 && (
+                <div className="space-y-3 mt-4">
+                  <h4 className="font-medium text-sm">Gallery</h4>
+                  {additionalImages.map((img, index) => (
+                    <div key={index} className="space-y-1">
+                      <div className="border rounded-md overflow-hidden">
+                        <AspectRatio ratio={16/9}>
+                          <img 
+                            src={img.url} 
+                            alt={img.caption || `${stats.name} image ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </AspectRatio>
+                      </div>
+                      {img.caption && (
+                        <p className="text-xs text-center text-muted-foreground px-2">{img.caption}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="mt-4 pt-2 border-t text-center">
               <p className="text-sm text-muted-foreground">Click to flip back</p>

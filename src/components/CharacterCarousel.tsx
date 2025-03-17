@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CharacterTablet } from '@/components/CharacterTablet';
 
+interface CharacterImage {
+  url: string;
+  caption?: string;
+}
+
 interface Character {
   id: string;
   image: string;
@@ -14,6 +19,7 @@ interface Character {
     traits: string[];
   };
   description: string;
+  additionalImages?: CharacterImage[];
   category: 'anime' | 'disney' | 'ghibli' | 'manhwa' | 'asian';
 }
 
@@ -92,6 +98,7 @@ export function CharacterCarousel({ characters, title }: CharacterCarouselProps)
                     image={character.image}
                     stats={character.stats}
                     description={character.description}
+                    additionalImages={character.additionalImages}
                     category={character.category}
                   />
                 </motion.div>

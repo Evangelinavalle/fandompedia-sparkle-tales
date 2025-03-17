@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -23,6 +22,16 @@ const categoryData = {
           traits: ['Determined', 'Friendly', 'Reckless', 'Optimistic']
         },
         description: 'Naruto Uzumaki is the titular protagonist of the manga Naruto, created by Masashi Kishimoto. As the series progresses, he is a young ninja from the fictional village of Konohagakure.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?ninja', 
+            caption: 'Naruto using his signature jutsu'
+          },
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?forest', 
+            caption: 'Training in the Hidden Leaf Village'
+          }
+        ],
         category: 'anime' as const
       },
       {
@@ -35,6 +44,12 @@ const categoryData = {
           traits: ['Powerful', 'Kind', 'Naive', 'Competitive']
         },
         description: 'Son Goku is a fictional character and main protagonist of the Dragon Ball manga series created by Akira Toriyama. He is based on Sun Wukong, a main character in the classic Chinese novel Journey to the West.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?energy', 
+            caption: 'Goku powering up to Super Saiyan'
+          }
+        ],
         category: 'anime' as const
       },
       {
@@ -76,6 +91,16 @@ const categoryData = {
           traits: ['Courageous', 'Conflicted', 'Loyal', 'Compassionate']
         },
         description: 'Simba is the protagonist of Disney\'s 1994 animated feature film, The Lion King. He is the son of Mufasa and Sarabi, who was destined to rule the Pride Lands, as king.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?savanna', 
+            caption: 'The Pride Lands'
+          },
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?lion-cub', 
+            caption: 'Young Simba'
+          }
+        ],
         category: 'disney' as const
       },
       {
@@ -104,6 +129,16 @@ const categoryData = {
           traits: ['Gentle', 'Mysterious', 'Magical', 'Protective']
         },
         description: 'Totoro is the title character from the Studio Ghibli film My Neighbor Totoro, directed by Hayao Miyazaki. Totoro is a spirit of the forest, and is considered to be one of the most iconic characters from Studio Ghibli.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?nature', 
+            caption: 'Totoro\'s forest home'
+          },
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?rain', 
+            caption: 'Waiting at the bus stop'
+          }
+        ],
         category: 'ghibli' as const
       }
     ]
@@ -216,6 +251,7 @@ const CategoryPage = () => {
                   image={character.image}
                   stats={character.stats}
                   description={character.description}
+                  additionalImages={character.additionalImages}
                   category={character.category}
                 />
               </motion.div>

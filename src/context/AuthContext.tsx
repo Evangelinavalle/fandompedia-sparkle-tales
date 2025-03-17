@@ -33,13 +33,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       toast({
-        title: "Account created",
-        description: "Your account has been created successfully.",
+        title: "Cuenta creada",
+        description: "Tu cuenta ha sido creada exitosamente.",
       });
     } catch (error) {
       if (error instanceof Error) {
         toast({
-          title: "Error creating account",
+          title: "Error al crear cuenta",
           description: error.message,
           variant: "destructive",
         });
@@ -52,13 +52,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       toast({
-        title: "Welcome back!",
-        description: "You have been signed in successfully.",
+        title: "¡Bienvenido de vuelta!",
+        description: "Has iniciado sesión exitosamente.",
       });
     } catch (error) {
       if (error instanceof Error) {
         toast({
-          title: "Error signing in",
+          title: "Error al iniciar sesión",
           description: error.message,
           variant: "destructive",
         });
@@ -71,13 +71,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await signOut(auth);
       toast({
-        title: "Signed out",
-        description: "You have been signed out successfully.",
+        title: "Sesión cerrada",
+        description: "Has cerrado sesión exitosamente.",
       });
     } catch (error) {
       if (error instanceof Error) {
         toast({
-          title: "Error signing out",
+          title: "Error al cerrar sesión",
           description: error.message,
           variant: "destructive",
         });

@@ -3,18 +3,31 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 // Configuración de Firebase para tu aplicación
-// Reemplaza estos valores con los de tu proyecto en firebase.console.google.com
+// Para añadir tu información del proyecto de Firebase:
+// 1. Ve a firebase.console.google.com
+// 2. Selecciona tu proyecto
+// 3. En la configuración del proyecto, encuentra la sección "Your apps"
+// 4. Copia los valores de configuración
+
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "TU_API_KEY",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "TU_AUTH_DOMAIN",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "TU_PROJECT_ID",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "TU_STORAGE_BUCKET",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "TU_MESSAGING_SENDER_ID",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "TU_APP_ID",
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "TU_MEASUREMENT_ID"
+  apiKey: "ESCRIBE_TU_API_KEY_AQUÍ",
+  authDomain: "ESCRIBE_TU_AUTH_DOMAIN_AQUÍ",
+  projectId: "ESCRIBE_TU_PROJECT_ID_AQUÍ",
+  storageBucket: "ESCRIBE_TU_STORAGE_BUCKET_AQUÍ",
+  messagingSenderId: "ESCRIBE_TU_MESSAGING_SENDER_ID_AQUÍ",
+  appId: "ESCRIBE_TU_APP_ID_AQUÍ",
+  measurementId: "ESCRIBE_TU_MEASUREMENT_ID_AQUÍ"
 };
 
 // Inicializa Firebase
-const app = initializeApp(firebaseConfig);
+// Usando getApps para evitar errores de inicialización duplicada
+let app;
+try {
+  app = initializeApp(firebaseConfig);
+} catch (error) {
+  // Si ya existe una app, usa la existente
+  console.error("Error inicializando Firebase:", error);
+}
+
 export const auth = getAuth(app);
 export default app;

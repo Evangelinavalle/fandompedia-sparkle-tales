@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -15,7 +14,7 @@ const categoryData = {
     characters: [
       {
         id: 'naruto',
-        image: 'https://source.unsplash.com/random/300x400/?anime',
+        image: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747',
         stats: {
           name: 'Naruto Uzumaki',
           age: 17,
@@ -25,11 +24,11 @@ const categoryData = {
         description: 'Naruto Uzumaki is the titular protagonist of the manga Naruto, created by Masashi Kishimoto. As the series progresses, he is a young ninja from the fictional village of Konohagakure.',
         additionalImages: [
           { 
-            url: 'https://source.unsplash.com/random/800x450/?ninja', 
+            url: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747', 
             caption: 'Naruto using his signature jutsu'
           },
           { 
-            url: 'https://source.unsplash.com/random/800x450/?forest', 
+            url: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747', 
             caption: 'Training in the Hidden Leaf Village'
           }
         ],

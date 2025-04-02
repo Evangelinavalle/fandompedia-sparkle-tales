@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CategorySelection } from '@/components/CategorySelection';
 import { CharacterCarousel } from '@/components/CharacterCarousel';
+import { Sparkles, Heart, Star } from 'lucide-react';
 
 // Sample data - this would typically come from your database
 const featuredAnime = [
@@ -109,17 +110,60 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-b from-secondary/50 to-background">
+      <section className="pt-24 pb-16 bg-gradient-to-b from-secondary/50 to-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <motion.div 
+          className="absolute top-20 right-[10%] text-pink-300 opacity-40"
+          animate={{ 
+            y: [0, -15, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          <Heart size={48} />
+        </motion.div>
+        
+        <motion.div 
+          className="absolute bottom-10 left-[15%] text-yellow-300 opacity-40"
+          animate={{ 
+            y: [0, 10, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{ 
+            duration: 3.5,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          <Star size={36} />
+        </motion.div>
+        
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-            <motion.h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+            <motion.div
+              className="relative"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Welcome to <span className="text-primary">FandomPedia</span>
-            </motion.h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Welcome to <span className="text-primary relative inline-block">
+                  FandomPedia
+                  <motion.span 
+                    className="absolute -top-6 -right-8 text-2xl"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                  >
+                    <Sparkles className="h-5 w-5 text-yellow-400" />
+                  </motion.span>
+                </span>
+              </h1>
+            </motion.div>
             
             <motion.p
               className="text-xl text-muted-foreground mb-8"
@@ -137,7 +181,7 @@ const Index = () => {
             >
               <a 
                 href="#categories" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-medium transition-colors"
+                className="cute-button"
               >
                 Explore Characters
               </a>
@@ -168,14 +212,14 @@ const Index = () => {
       </section>
       
       {/* Featured Characters Section */}
-      <section className="py-12 bg-secondary/30">
+      <section className="py-16 bg-gradient-to-r from-secondary/20 via-secondary/30 to-secondary/20">
         <CharacterCarousel 
           characters={featuredAnime} 
           title="Featured Anime Characters"
         />
       </section>
       
-      <section className="py-12">
+      <section className="py-16 bg-white dark:bg-background">
         <CharacterCarousel 
           characters={featuredDisney} 
           title="Featured Disney Characters"
@@ -183,7 +227,7 @@ const Index = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-background to-secondary/50">
+      <section className="py-20 bg-gradient-to-r from-background via-secondary/40 to-background">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -192,13 +236,16 @@ const Index = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
+            <motion.div className="mb-2 inline-block">
+              <Star className="h-8 w-8 inline-block text-yellow-400 fill-yellow-400" />
+            </motion.div>
             <h2 className="text-3xl font-bold mb-6">Join Our Community</h2>
             <p className="text-muted-foreground mb-8">
               Connect with fellow fans, discuss your favorite characters, and contribute to our growing database.
             </p>
             <a 
               href="/forum" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-medium transition-colors"
+              className="cute-button"
             >
               Visit the Forum
             </a>

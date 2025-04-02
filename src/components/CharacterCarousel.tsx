@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { CharacterTablet } from '@/components/CharacterTablet';
 
 interface CharacterImage {
@@ -72,7 +72,32 @@ export function CharacterCarousel({ characters, title }: CharacterCarouselProps)
   return (
     <div className="py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-6">{title}</h2>
+        <motion.div 
+          className="flex items-center mb-8 relative"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold relative">
+            {title}
+            <motion.span 
+              className="absolute -top-4 -right-8 text-2xl"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Sparkles className="h-5 w-5 text-yellow-400" />
+            </motion.span>
+          </h2>
+          <motion.div 
+            className="ml-4 h-1 bg-gradient-to-r from-primary/50 to-transparent flex-grow rounded-full"
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: "100%", opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          />
+        </motion.div>
         
         <div className="relative">
           <motion.div 
@@ -87,10 +112,14 @@ export function CharacterCarousel({ characters, title }: CharacterCarouselProps)
               animate={{ x: -currentIndex * 320 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
-              {characters.map((character) => (
+              {characters.map((character, index) => (
                 <motion.div 
                   key={character.id}
                   className="min-w-[280px] select-none"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -106,19 +135,29 @@ export function CharacterCarousel({ characters, title }: CharacterCarouselProps)
             </motion.div>
           </motion.div>
           
-          <button 
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-black/80 transition-colors z-10"
+          <motion.button 
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-black/60 rounded-full p-3 shadow-md hover:bg-white dark:hover:bg-black/80 transition-colors z-10"
             onClick={handlePrev}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
           >
             <ChevronLeft className="h-6 w-6" />
-          </button>
+          </motion.button>
           
-          <button 
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-black/60 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-black/80 transition-colors z-10"
+          <motion.button 
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 dark:bg-black/60 rounded-full p-3 shadow-md hover:bg-white dark:hover:bg-black/80 transition-colors z-10"
             onClick={handleNext}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
           >
             <ChevronRight className="h-6 w-6" />
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>

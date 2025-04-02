@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 30 30% 98%;
     --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: 336 80% 58%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 30 50% 96%;
     --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 240 4.8% 95.9%;
+    --muted: 30 10% 94%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 240 4.8% 95.9%;
+    --accent: 14 100% 67%;
     --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,9 +31,9 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 336 80% 58%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,7 +55,7 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
+    --primary: 336 80% 55%;
     --primary-foreground: 240 5.9% 10%;
 
     --secondary: 240 3.7% 15.9%;
@@ -64,7 +64,7 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 240 3.7% 15.9%;
+    --accent: 14 100% 57%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -72,7 +72,7 @@
 
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 336 80% 60%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -115,7 +115,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:border-white/10;
+    @apply bg-white/30 dark:bg-black/30 backdrop-blur-lg border border-white/30 dark:border-white/10 shadow-lg;
   }
   
   .character-tablet {
@@ -139,23 +139,23 @@
   }
   
   .anime-tag {
-    @apply bg-anime/10 text-anime hover:bg-anime/20;
+    @apply bg-anime/20 text-anime hover:bg-anime/30 font-medium;
   }
   
   .disney-tag {
-    @apply bg-disney/10 text-disney hover:bg-disney/20;
+    @apply bg-disney/20 text-disney hover:bg-disney/30 font-medium;
   }
   
   .ghibli-tag {
-    @apply bg-ghibli/10 text-ghibli hover:bg-ghibli/20;
+    @apply bg-ghibli/20 text-ghibli hover:bg-ghibli/30 font-medium;
   }
   
   .manhwa-tag {
-    @apply bg-manhwa/10 text-manhwa hover:bg-manhwa/20;
+    @apply bg-manhwa/20 text-manhwa hover:bg-manhwa/30 font-medium;
   }
   
   .asian-tag {
-    @apply bg-asian/10 text-asian hover:bg-asian/20;
+    @apply bg-asian/20 text-asian hover:bg-asian/30 font-medium;
   }
   
   .navbar-link {
@@ -176,5 +176,86 @@
   
   .active-link::after {
     @apply w-full;
+  }
+  
+  /* New cute but elegant styles */
+  .cute-button {
+    @apply bg-gradient-to-r from-primary to-accent text-white font-medium px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .subtle-animation {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+  
+  .floating-animation {
+    @apply animate-float;
+  }
+  
+  .pulse-animation {
+    @apply animate-pulse-soft;
+  }
+  
+  .category-card {
+    @apply rounded-2xl border p-6 transition-all duration-300 hover:shadow-xl overflow-hidden relative;
+  }
+  
+  .category-card::before {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r opacity-0 transition-all duration-300;
+  }
+  
+  .category-card:hover::before {
+    @apply opacity-100;
+  }
+  
+  .anime-card::before {
+    @apply from-anime to-anime/70;
+  }
+  
+  .disney-card::before {
+    @apply from-disney to-disney/70;
+  }
+  
+  .ghibli-card::before {
+    @apply from-ghibli to-ghibli/70;
+  }
+  
+  .manhwa-card::before {
+    @apply from-manhwa to-manhwa/70;
+  }
+  
+  .asian-card::before {
+    @apply from-asian to-asian/70;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+  
+  .shimmer::after {
+    @apply content-[''] absolute top-0 -left-[100%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12;
+    animation: shimmer 2.5s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+}
+
+@layer components {
+  .forum-post {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-transform hover:shadow-lg;
+  }
+  
+  .forum-post-header {
+    @apply p-5 border-b border-gray-100 dark:border-gray-700;
+  }
+  
+  .forum-post-body {
+    @apply p-5;
+  }
+  
+  .forum-comment {
+    @apply p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg mt-4 transition-all duration-200 hover:bg-gray-100 dark:hover:bg-gray-700/70;
   }
 }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CategorySelection } from '@/components/CategorySelection';
+import { ArrowLeft } from 'lucide-react';
 
 const Categories = () => {
   return (
@@ -13,6 +14,16 @@ const Categories = () => {
       <main className="flex-1 pt-24">
         <section className="py-12">
           <div className="container mx-auto px-4">
+            <div className="mb-8">
+              <Link 
+                to="/" 
+                className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-4"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Home
+              </Link>
+            </div>
+
             <motion.div
               className="text-center max-w-3xl mx-auto mb-16"
               initial={{ opacity: 0, y: -20 }}

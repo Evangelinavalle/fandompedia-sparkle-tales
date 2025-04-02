@@ -1,0 +1,196 @@
+
+import { CategoryDataMap } from '@/types/category';
+
+// Sample data - would be fetched from backend based on category
+export const categoryData: CategoryDataMap = {
+  anime: {
+    title: 'Anime Characters',
+    description: 'Explore your favorite anime characters from various series.',
+    characters: [
+      {
+        id: 'naruto',
+        image: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747',
+        stats: {
+          name: 'Naruto Uzumaki',
+          age: 17,
+          height: '166 cm',
+          traits: ['Determined', 'Friendly', 'Reckless', 'Optimistic']
+        },
+        description: 'Naruto Uzumaki is the titular protagonist of the manga Naruto, created by Masashi Kishimoto. As the series progresses, he is a young ninja from the fictional village of Konohagakure.',
+        additionalImages: [
+          { 
+            url: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747', 
+            caption: 'Naruto using his signature jutsu'
+          },
+          { 
+            url: 'https://static.wikia.nocookie.net/boruto/images/6/6c/Naruto_with_coat.png/revision/latest/scale-to-width-down/231?cb=20170917010747', 
+            caption: 'Training in the Hidden Leaf Village'
+          }
+        ],
+        category: 'anime' as const
+      },
+      {
+        id: 'goku',
+        image: 'https://source.unsplash.com/random/300x400/?dragon',
+        stats: {
+          name: 'Goku',
+          age: 'Unknown',
+          height: '175 cm',
+          traits: ['Powerful', 'Kind', 'Naive', 'Competitive']
+        },
+        description: 'Son Goku is a fictional character and main protagonist of the Dragon Ball manga series created by Akira Toriyama. He is based on Sun Wukong, a main character in the classic Chinese novel Journey to the West.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?energy', 
+            caption: 'Goku powering up to Super Saiyan'
+          }
+        ],
+        category: 'anime' as const
+      },
+      {
+        id: 'mikasa',
+        image: 'https://source.unsplash.com/random/300x400/?warrior',
+        stats: {
+          name: 'Mikasa Ackerman',
+          age: 19,
+          height: '170 cm',
+          traits: ['Protective', 'Skilled', 'Loyal', 'Stoic']
+        },
+        description: 'Mikasa Ackerman is a fictional character in the manga series Attack on Titan, created by Hajime Isayama. Mikasa is one of the last Asians, her mother having been one.',
+        category: 'anime' as const
+      },
+      {
+        id: 'luffy',
+        image: 'https://source.unsplash.com/random/300x400/?pirate',
+        stats: {
+          name: 'Monkey D. Luffy',
+          age: 19,
+          height: '174 cm',
+          traits: ['Adventurous', 'Loyal', 'Reckless', 'Determined']
+        },
+        description: 'Monkey D. Luffy, also known as "Straw Hat Luffy" and commonly as "Straw Hat", is the main protagonist of the manga and anime, One Piece.',
+        category: 'anime' as const
+      }
+    ]
+  },
+  disney: {
+    title: 'Disney Characters',
+    description: 'Discover beloved characters from Disney movies and shows.',
+    characters: [
+      {
+        id: 'simba',
+        image: 'https://source.unsplash.com/random/300x400/?lion',
+        stats: {
+          name: 'Simba',
+          age: 'Adult',
+          traits: ['Courageous', 'Conflicted', 'Loyal', 'Compassionate']
+        },
+        description: 'Simba is the protagonist of Disney\'s 1994 animated feature film, The Lion King. He is the son of Mufasa and Sarabi, who was destined to rule the Pride Lands, as king.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?savanna', 
+            caption: 'The Pride Lands'
+          },
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?lion-cub', 
+            caption: 'Young Simba'
+          }
+        ],
+        category: 'disney' as const
+      },
+      {
+        id: 'elsa',
+        image: 'https://source.unsplash.com/random/300x400/?snow',
+        stats: {
+          name: 'Elsa',
+          age: 24,
+          height: '170 cm',
+          traits: ['Magical', 'Introverted', 'Protective', 'Regal']
+        },
+        description: 'Elsa is the deuteragonist of Disney\'s 2013 animated feature film Frozen and the protagonist of its 2019 sequel. Born with the power of ice and snow, Elsa is the firstborn daughter of King Agnarr and Queen Iduna.',
+        category: 'disney' as const
+      }
+    ]
+  },
+  ghibli: {
+    title: 'Studio Ghibli Characters',
+    description: 'Meet enchanting characters from Studio Ghibli films.',
+    characters: [
+      {
+        id: 'totoro',
+        image: 'https://source.unsplash.com/random/300x400/?forest',
+        stats: {
+          name: 'Totoro',
+          traits: ['Gentle', 'Mysterious', 'Magical', 'Protective']
+        },
+        description: 'Totoro is the title character from the Studio Ghibli film My Neighbor Totoro, directed by Hayao Miyazaki. Totoro is a spirit of the forest, and is considered to be one of the most iconic characters from Studio Ghibli.',
+        additionalImages: [
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?nature', 
+            caption: 'Totoro\'s forest home'
+          },
+          { 
+            url: 'https://source.unsplash.com/random/800x450/?rain', 
+            caption: 'Waiting at the bus stop'
+          }
+        ],
+        category: 'ghibli' as const
+      }
+    ]
+  },
+  manhwa: {
+    title: 'Manhwa Characters',
+    description: 'Explore characters from popular Korean manhwa series.',
+    characters: [
+      {
+        id: 'solo-leveling',
+        image: 'https://source.unsplash.com/random/300x400/?warrior',
+        stats: {
+          name: 'Sung Jin-Woo',
+          age: 25,
+          traits: ['Determined', 'Powerful', 'Reserved', 'Strategic']
+        },
+        description: 'Sung Jin-Woo is the main protagonist of Solo Leveling. He started out as the weakest rank of hunter known as the "World\'s Weakest Hunter". After a near-death experience in a double dungeon, he gained the System\'s power.',
+        category: 'manhwa' as const
+      },
+      {
+        id: 'tower-of-god',
+        image: 'https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd',
+        stats: {
+          name: 'Twenty-Fifth Bam',
+          age: 20,
+          height: '178 cm',
+          traits: ['Compassionate', 'Resilient', 'Loyal', 'Exceptional Growth']
+        },
+        description: 'Bam is the main protagonist of Tower of God. He entered the Tower in pursuit of his friend Rachel who disappeared while attempting to climb the Tower. Initially appearing innocent and naive, Bam grows significantly throughout the series as he faces numerous challenges and betrayals.',
+        additionalImages: [
+          { 
+            url: 'https://images.unsplash.com/photo-1608889335941-32ac5f2041b9', 
+            caption: 'Bam using Shinsu abilities'
+          },
+          { 
+            url: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead', 
+            caption: 'Bam with his friends in the Tower'
+          }
+        ],
+        category: 'manhwa' as const
+      }
+    ]
+  },
+  asian: {
+    title: 'Asian Cartoon Characters',
+    description: 'Discover characters from Asian cartoons and animations.',
+    characters: [
+      {
+        id: 'asian-char',
+        image: 'https://source.unsplash.com/random/300x400/?cartoon',
+        stats: {
+          name: 'Sample Character',
+          traits: ['Brave', 'Clever', 'Kind']
+        },
+        description: 'This is a sample character from an Asian cartoon series. More details would be added here about their story, personality, and significance in their show.',
+        category: 'asian' as const
+      }
+    ]
+  }
+};

@@ -1,4 +1,3 @@
-
 // Sample data - this would typically come from your database
 export const featuredAnime = [
   {
@@ -94,5 +93,104 @@ export const featuredDisney = [
     },
     description: 'Elsa is the deuteragonist of Disney\'s 2013 animated feature film Frozen and the protagonist of its 2019 sequel. Born with the power of ice and snow, Elsa is the firstborn daughter of King Agnarr and Queen Iduna, the older sister of Queen Anna, and the former queen of Arendelle.',
     category: 'disney' as const
+  }
+];
+
+export const featuredGhibli = [
+  {
+    id: 'totoro',
+    image: '/totoro.jpg', 
+    stats: {
+      name: 'Totoro',
+      traits: ['Friendly', 'Magical', 'Mysterious', 'Gentle']
+    },
+    description: 'Totoro is a giant, mystical forest spirit who befriends two young girls, Satsuki and Mei, who have moved to the countryside. He is a central character in the 1988 Studio Ghibli film "My Neighbor Totoro", directed by Hayao Miyazaki. Totoro has become an iconic figure and the mascot of Studio Ghibli.',
+    additionalImages: [
+      { 
+        url: 'https://images.unsplash.com/photo-1472396961693-142e6e269027', 
+        caption: 'Totoro in the forest'
+      },
+      { 
+        url: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9', 
+        caption: 'The path to Totoro'
+      }
+    ],
+    category: 'ghibli' as const
+  },
+  {
+    id: 'chihiro',
+    image: '/chihiro.jpg', 
+    stats: {
+      name: 'Chihiro',
+      age: 10,
+      traits: ['Brave', 'Resourceful', 'Determined', 'Compassionate']
+    },
+    description: 'Chihiro Ogino is the protagonist of the 2001 Studio Ghibli film "Spirited Away". Initially portrayed as a sullen and negative child, Chihiro undergoes significant character development after she is trapped in the spirit world and must work to free herself and her parents.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'howl',
+    image: '/a092d193d3017b67f3801de6cf7a2951.jpg', 
+    stats: {
+      name: 'Howl Jenkins',
+      age: '20s',
+      traits: ['Powerful', 'Vain', 'Kind-hearted', 'Mysterious']
+    },
+    description: 'Howl is a wizard living in the fantasy kingdom of Ingary in a moving castle. Despite his reputation as a heart-eating wizard, Howl is actually quite compassionate and selfless. He is a main character in the 2004 film "Howl\'s Moving Castle", based on the novel by Diana Wynne Jones.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'nausicaa',
+    image: '/nausicaa_render_by_kingevan210_dg2deh6-fullview.png', 
+    stats: {
+      name: 'Nausicaä',
+      age: 16,
+      traits: ['Caring', 'Brave', 'Pacifist', 'Environmentalist']
+    },
+    description: 'Nausicaä is the protagonist of the 1984 Studio Ghibli film "Nausicaä of the Valley of the Wind". She is the princess of the Valley of the Wind who has a special gift for communicating with the giant insects that live in the toxic jungle that covers most of the surface of her post-apocalyptic world.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'san',
+    image: '/a3c86f79eb6f5213bea6a39f98a4f992.jpg', 
+    stats: {
+      name: 'San',
+      age: '16-17',
+      traits: ['Wild', 'Fierce', 'Loyal', 'Protective']
+    },
+    description: 'San, also known as Princess Mononoke, is a main character in the 1997 film "Princess Mononoke". Raised by the wolf-goddess Moro, San is a fierce warrior who resides in the forest with her wolf siblings and harbors a deep hatred for humans due to their exploitation of the forest and its resources.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'kiki',
+    image: '/009ecda10efffe01a13e4fa8bc87323d.jpg', 
+    stats: {
+      name: 'Kiki',
+      age: 13,
+      traits: ['Independent', 'Kind', 'Hard-working', 'Determined']
+    },
+    description: 'Kiki is a young witch and the protagonist of the 1989 film "Kiki\'s Delivery Service". According to witch tradition, Kiki must spend a year away from home to complete her training. She settles in a coastal town and starts a flying delivery service, facing challenges that help her grow and develop as a person.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'arrietty',
+    image: '/d2492d69cdb5c660e71001a5b4fa8a90.jpg', 
+    stats: {
+      name: 'Arrietty',
+      age: 14,
+      traits: ['Curious', 'Brave', 'Adventurous', 'Caring']
+    },
+    description: 'Arrietty is a tiny, 14-year-old girl who lives with her parents under the floorboards of a house. She is part of a race of tiny people known as "Borrowers" who borrow small items from humans to survive. She is the protagonist of the 2010 film "The Secret World of Arrietty", based on "The Borrowers" by Mary Norton.',
+    category: 'ghibli' as const
+  },
+  {
+    id: 'haku',
+    image: '/haku_the_river_spirit_by_chestrina_d1f4vc-fullview.jpg', 
+    stats: {
+      name: 'Haku Nigihyami',
+      traits: ['Mysterious', 'Protective', 'Loyal', 'Powerful']
+    },
+    description: 'Haku is a young boy who works for the witch Yubaba in her bathhouse. In reality, he is a river spirit who once saved Chihiro from drowning when she was young. He plays a major role in helping Chihiro navigate the spirit world in the film "Spirited Away".',
+    category: 'ghibli' as const
   }
 ];

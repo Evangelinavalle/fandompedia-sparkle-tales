@@ -1,13 +1,15 @@
 
+export type CharacterStats = {
+  name: string;
+  age?: number | string;
+  height?: string;
+  traits: string[];
+};
+
 export type Character = {
   id: string;
   image: string;
-  stats: {
-    name: string;
-    age?: number | string;
-    height?: string;
-    traits: string[];
-  };
+  stats: CharacterStats;
   description: string;
   additionalImages?: Array<{
     url: string;

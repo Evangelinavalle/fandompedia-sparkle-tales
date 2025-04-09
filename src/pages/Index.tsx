@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -9,7 +10,7 @@ import { Link } from 'react-router-dom';
 const featuredAnime = [
   {
     id: 'naruto',
-    image: 'https://source.unsplash.com/random/300x400/?anime',
+    image: '/Profile 2.jpg', // Updated image
     stats: {
       name: 'Naruto Uzumaki',
       age: 17,
@@ -31,7 +32,7 @@ const featuredAnime = [
   },
   {
     id: 'goku',
-    image: 'https://source.unsplash.com/random/300x400/?dragon',
+    image: '/latest', // Updated image
     stats: {
       name: 'Goku',
       age: 'Unknown',
@@ -43,7 +44,7 @@ const featuredAnime = [
   },
   {
     id: 'mikasa',
-    image: 'https://source.unsplash.com/random/300x400/?warrior',
+    image: '/latest', // Updated image
     stats: {
       name: 'Mikasa Ackerman',
       age: 19,
@@ -55,7 +56,7 @@ const featuredAnime = [
   },
   {
     id: 'luffy',
-    image: 'https://source.unsplash.com/random/300x400/?pirate',
+    image: '/5242337dae2f719868f3628075fd8425.jpg', // Updated image
     stats: {
       name: 'Monkey D. Luffy',
       age: 19,
@@ -70,7 +71,7 @@ const featuredAnime = [
 const featuredDisney = [
   {
     id: 'simba',
-    image: 'https://source.unsplash.com/random/300x400/?lion',
+    image: '/250px-Simba(TheLionKing).png', // Updated image
     stats: {
       name: 'Simba',
       age: 'Adult',
@@ -91,7 +92,7 @@ const featuredDisney = [
   },
   {
     id: 'elsa',
-    image: 'https://source.unsplash.com/random/300x400/?snow',
+    image: '/Elsa_from_Disney\'s_Frozen.png', // Updated image
     stats: {
       name: 'Elsa',
       age: 24,

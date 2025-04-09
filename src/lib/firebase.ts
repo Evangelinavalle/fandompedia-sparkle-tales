@@ -1,33 +1,38 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics";
 
-// Configuración de Firebase para tu aplicación
-// Para añadir tu información del proyecto de Firebase:
-// 1. Ve a firebase.console.google.com
-// 2. Selecciona tu proyecto
-// 3. En la configuración del proyecto, encuentra la sección "Your apps"
-// 4. Copia los valores de configuración
-
+// Firebase configuration for your application
 const firebaseConfig = {
-  apiKey: "ESCRIBE_TU_API_KEY_AQUÍ",
-  authDomain: "ESCRIBE_TU_AUTH_DOMAIN_AQUÍ",
-  projectId: "ESCRIBE_TU_PROJECT_ID_AQUÍ",
-  storageBucket: "ESCRIBE_TU_STORAGE_BUCKET_AQUÍ",
-  messagingSenderId: "ESCRIBE_TU_MESSAGING_SENDER_ID_AQUÍ",
-  appId: "ESCRIBE_TU_APP_ID_AQUÍ",
-  measurementId: "ESCRIBE_TU_MEASUREMENT_ID_AQUÍ"
+  apiKey: "AIzaSyBSUFaC3GcnBBRddktCEPCB3I8mlU6X_Ao",
+  authDomain: "fandompedia-16.firebaseapp.com",
+  projectId: "fandompedia-16",
+  storageBucket: "fandompedia-16.firebasestorage.app",
+  messagingSenderId: "956835498278",
+  appId: "1:956835498278:web:e4ed451decfc606e7119e7",
+  measurementId: "G-Y7FKQ7GWP2"
 };
 
-// Inicializa Firebase
-// Usando getApps para evitar errores de inicialización duplicada
+// Initialize Firebase
 let app;
 try {
   app = initializeApp(firebaseConfig);
 } catch (error) {
-  // Si ya existe una app, usa la existente
-  console.error("Error inicializando Firebase:", error);
+  // If an app already exists, use the existing one
+  console.error("Error initializing Firebase:", error);
+}
+
+// Initialize analytics if in browser environment
+let analytics;
+if (typeof window !== 'undefined') {
+  try {
+    analytics = getAnalytics(app);
+  } catch (error) {
+    console.error("Error initializing Analytics:", error);
+  }
 }
 
 export const auth = getAuth(app);
+export { analytics };
 export default app;

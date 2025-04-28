@@ -2,7 +2,7 @@
 export const featuredAnime = [
   {
     id: 'naruto',
-    image: '/Profile 2.jpg', // Updated image
+    image: '/Profile 2.jpg',
     stats: {
       name: 'Naruto Uzumaki',
       age: 17,
@@ -24,7 +24,7 @@ export const featuredAnime = [
   },
   {
     id: 'goku',
-    image: '/latest', // Updated image
+    image: '/latest',
     stats: {
       name: 'Goku',
       age: 'Unknown',
@@ -36,7 +36,7 @@ export const featuredAnime = [
   },
   {
     id: 'mikasa',
-    image: '/latest', // Updated image
+    image: '/latest',
     stats: {
       name: 'Mikasa Ackerman',
       age: 19,
@@ -48,7 +48,7 @@ export const featuredAnime = [
   },
   {
     id: 'luffy',
-    image: '/5242337dae2f719868f3628075fd8425.jpg', // Updated image
+    image: '/5242337dae2f719868f3628075fd8425.jpg',
     stats: {
       name: 'Monkey D. Luffy',
       age: 19,
@@ -57,13 +57,25 @@ export const featuredAnime = [
     },
     description: 'Monkey D. Luffy, also known as "Straw Hat Luffy" and commonly as "Straw Hat", is the main protagonist of the manga and anime, One Piece. He is the founder and captain of the increasingly infamous and powerful Straw Hat Pirates, as well as one of its top fighters. His lifelong dream is to become the Pirate King by finding the legendary treasure left behind by the late Pirate King, Gol D. Roger.',
     category: 'anime' as const
+  },
+  {
+    id: 'usagi',
+    image: '/27bab61d-4a91-409b-942d-983848b05427.png',
+    stats: {
+      name: 'Usagi Tsukino',
+      age: 14,
+      height: '150 cm',
+      traits: ['Compassionate', 'Crybaby', 'Brave', 'Loyal']
+    },
+    description: 'Usagi Tsukino, also known as Sailor Moon, is the protagonist of the Sailor Moon manga and anime series. She is a seemingly ordinary middle school student who learns she has the power to transform into the Pretty Guardian of Love and Justice. Despite being initially portrayed as a crybaby and an underachiever, she grows throughout the series, eventually becoming the powerful Sailor Moon.',
+    category: 'anime' as const
   }
 ];
 
 export const featuredDisney = [
   {
     id: 'simba',
-    image: '/250px-Simba(TheLionKing).png', // Updated image
+    image: '/250px-Simba(TheLionKing).png',
     stats: {
       name: 'Simba',
       age: 'Adult',
@@ -84,7 +96,7 @@ export const featuredDisney = [
   },
   {
     id: 'elsa',
-    image: '/Elsa_from_Disney\'s_Frozen.png', // Updated image
+    image: '/Elsa_from_Disney\'s_Frozen.png',
     stats: {
       name: 'Elsa',
       age: 24,
@@ -92,6 +104,28 @@ export const featuredDisney = [
       traits: ['Magical', 'Introverted', 'Protective', 'Regal']
     },
     description: 'Elsa is the deuteragonist of Disney\'s 2013 animated feature film Frozen and the protagonist of its 2019 sequel. Born with the power of ice and snow, Elsa is the firstborn daughter of King Agnarr and Queen Iduna, the older sister of Queen Anna, and the former queen of Arendelle.',
+    category: 'disney' as const
+  },
+  {
+    id: 'rascal',
+    image: '/latest',
+    stats: {
+      name: 'Rascal the Racoon',
+      age: 'Young',
+      traits: ['Mischievous', 'Clever', 'Playful', 'Adventurous']
+    },
+    description: 'Rascal the Racoon is a beloved character from Disney\'s animated series. Known for his striped tail and mask-like facial markings, Rascal is always getting into playful trouble and embarking on adventures with his friends in the forest.',
+    category: 'disney' as const
+  },
+  {
+    id: 'heidi',
+    image: '/latest',
+    stats: {
+      name: 'Heidi',
+      age: 8,
+      traits: ['Cheerful', 'Kind', 'Nature-loving', 'Resilient']
+    },
+    description: 'Heidi is the main character of the children\'s novel of the same name, which has been adapted into various films and series. She is a young orphan girl who is taken to live with her grandfather in the Swiss Alps and experiences the joy of life in the mountains while making friends with the local people and animals.',
     category: 'disney' as const
   }
 ];
@@ -192,5 +226,29 @@ export const featuredGhibli = [
     },
     description: 'Haku is a young boy who works for the witch Yubaba in her bathhouse. In reality, he is a river spirit who once saved Chihiro from drowning when she was young. He plays a major role in helping Chihiro navigate the spirit world in the film "Spirited Away".',
     category: 'ghibli' as const
+  }
+];
+
+export const featuredOthers = [
+  {
+    id: 'doraemon',
+    image: '/Doraemon_character.png',
+    stats: {
+      name: 'Doraemon',
+      traits: ['Helpful', 'Resourceful', 'Loyal', 'Technological']
+    },
+    description: 'Doraemon is a fictional robot cat from the 22nd century, sent back in time by a young boy named Sewashi to help his great-grandfather, Nobita Nobi. Created by Fujiko F. Fujio, Doraemon is known for his magical 4D pocket, from which he can pull out futuristic gadgets to help Nobita with his problems.',
+    category: 'anime' as const
+  },
+  {
+    id: 'maruko',
+    image: '/latest',
+    stats: {
+      name: 'Maruko-chan',
+      age: 9,
+      traits: ['Lazy', 'Honest', 'Imaginative', 'Stubborn']
+    },
+    description: 'Maruko-chan (Momoko Sakura) is the main character of the manga and anime series "Chibi Maruko-chan". She is a precocious third-grade elementary school student living in Shimizu, Japan. The series depicts her simple but humorous everyday life with her family and friends.',
+    category: 'anime' as const
   }
 ];

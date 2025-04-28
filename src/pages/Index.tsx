@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer';
 import { HeroSection } from '@/components/home/HeroSection';
 import { FeaturedSection } from '@/components/home/FeaturedSection';
 import { CTASection } from '@/components/home/CTASection';
-import { featuredAnime, featuredDisney } from '@/data/featuredCharacters';
+import { featuredAnime, featuredDisney, featuredOthers } from '@/data/featuredCharacters';
 
 const Index = () => {
   return (
@@ -17,6 +17,7 @@ const Index = () => {
       <FeaturedSection 
         animeCharacters={featuredAnime}
         disneyCharacters={featuredDisney}
+        otherCharacters={featuredOthers}
       />
       
       <CTASection />

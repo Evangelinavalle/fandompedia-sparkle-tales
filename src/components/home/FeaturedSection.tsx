@@ -12,25 +12,31 @@ export function FeaturedSection({ animeCharacters, disneyCharacters, otherCharac
   return (
     <>
       <section className="py-16 bg-gradient-to-r from-secondary/20 via-secondary/30 to-secondary/20">
-        <CharacterCarousel 
-          characters={animeCharacters} 
-          title="Featured Anime Characters"
-        />
+        <div className="centered-content">
+          <CharacterCarousel 
+            characters={animeCharacters} 
+            title="Featured Anime Characters"
+          />
+        </div>
       </section>
       
       <section className="py-16 bg-white dark:bg-background">
-        <CharacterCarousel 
-          characters={disneyCharacters} 
-          title="Featured Disney Characters"
-        />
+        <div className="centered-content">
+          <CharacterCarousel 
+            characters={disneyCharacters} 
+            title="Featured Disney Characters"
+          />
+        </div>
       </section>
       
       {otherCharacters.length > 0 && (
         <section className="py-16 bg-gradient-to-r from-secondary/20 via-secondary/30 to-secondary/20">
-          <CharacterCarousel 
-            characters={otherCharacters} 
-            title="Other Featured Characters"
-          />
+          <div className="centered-content">
+            <CharacterCarousel 
+              characters={otherCharacters} 
+              title="Other Featured Characters"
+            />
+          </div>
         </section>
       )}
     </>

@@ -14,11 +14,18 @@ const Index = () => {
       
       <HeroSection />
       
-      <FeaturedSection 
-        animeCharacters={featuredAnime}
-        disneyCharacters={featuredDisney}
-        otherCharacters={featuredOthers}
-      />
+      <div className="fancy-container">
+        <h2 id="featured-characters" className="text-3xl font-bold mb-8 fancy-text centered-content">
+          Featured Character Collections
+        </h2>
+        <div className="responsive-container">
+          <FeaturedSection 
+            animeCharacters={featuredAnime}
+            disneyCharacters={featuredDisney}
+            otherCharacters={featuredOthers}
+          />
+        </div>
+      </div>
       
       <CTASection />
       

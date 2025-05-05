@@ -1,0 +1,79 @@
+
+/* Main External Stylesheet */
+/* This stylesheet centralizes CSS management for the project */
+
+/* CSS Variables already defined in index.css */
+
+/* Typography Enhancement */
+/* Using Google Font - Playfair Display for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Enhanced Visual Appeal */
+.fancy-container {
+  background-color: #f8f4ff; /* Background color */
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); /* Background image as gradient */
+  border-radius: 15px; /* Border radius */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Box shadow */
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.fancy-text {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Text shadow */
+  color: hsl(var(--primary));
+  font-weight: bold;
+}
+
+/* Structured Layout */
+.centered-content {
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Targeting with ID Selector */
+#featured-characters {
+  border-bottom: 3px solid hsl(var(--accent));
+  padding-bottom: 1rem;
+}
+
+/* Descendant Selector */
+.character-tablet .character-stats {
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Responsive Design - Media Queries */
+/* Mobile View */
+@media (max-width: 640px) {
+  .responsive-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .fancy-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+/* Tablet View */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .responsive-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Desktop View */
+@media (min-width: 1025px) {
+  .responsive-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
